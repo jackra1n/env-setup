@@ -35,9 +35,13 @@ curl -L https://github.com/IdreesInc/Monocraft/releases/latest/download/Monocraf
 sudo mv /tmp/Monocraft-nerd-fonts-patched.ttf /usr/share/fonts/
 fc-cache -f -v
 
-# Set Miracode as the default font in gnome-terminal
+# Set Monocraft as the default font in gnome-terminal
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$DEFAULT_PROFILE/" use-system-font false
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$DEFAULT_PROFILE/" font 'Monocraft Nerd Font 12'
+
+
+gsettings set org.gnome.desktop.input-sources show-all-sources true
+
 
 # Install packages
 ./packages.sh
