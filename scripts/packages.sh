@@ -1,17 +1,20 @@
 #!/bin/bash
 
+sudo dnf install zsh
+sudo dnf install zsh-autosuggestions
+sudo dnf install zsh-syntax-highlighting
+
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
 curl -LsSf https://astral.sh/uv/install.sh | sh
 curl https://pyenv.run | bash
 sudo dnf install btop
 sudo dnf install fastfetch
+sudo dnf install rsync
 
-# Add chrome repo and install chrome
-sudo dnf install fedora-workstation-repositories
-sudo dnf config-manager --set-enabled google-chrome
-sudo dnf install google-chrome-stable
+sudo wget "https://github.com/Mikescher/better-docker-ps/releases/latest/download/dops_linux-amd64-static" -O "/usr/local/bin/dops" && sudo chmod +x "/usr/local/bin/dops"
 
-# Add vscode repo and install vscode
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
-sudo dnf check-update
-sudo dnf install code
+# Install docker
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
