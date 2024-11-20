@@ -6,7 +6,8 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 sudo dnf check-update
 sudo dnf install code
 
-flatpak install io.github.zen_browser.zen -y
 flatpak install dev.vencord.Vesktop -y
 flatpak install com.axosoft.GitKraken -y
 flatpak install org.signal.Signal -y
+flatpak install com.mattjakeman.ExtensionManager -y
+flatpak install org.localsend.localsend_app -y

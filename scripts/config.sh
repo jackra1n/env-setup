@@ -6,8 +6,6 @@ DEFAULT_PROFILE=${DEFAULT_PROFILE:1:-1}
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$DEFAULT_PROFILE/" use-custom-command true
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$DEFAULT_PROFILE/" custom-command '/bin/zsh'
 
-cp -r config-files/. ~
-
 # Download and install Monocraft font
 curl -L https://github.com/IdreesInc/Monocraft/releases/latest/download/Monocraft-nerd-fonts-patched.ttc -o /tmp/Monocraft-nerd-fonts-patched.ttc
 sudo mv /tmp/Monocraft-nerd-fonts-patched.ttc /usr/share/fonts/
